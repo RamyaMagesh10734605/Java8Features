@@ -39,6 +39,14 @@ public class Employee {
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
+	
+	public Employee() {
+		
+	}
+	
+public Employee(String name) {
+		this.name= name;
+	}
 	public Employee(String name, int empNo, List<String> tasks, double salary, String designation) {
 		super();
 		this.name = name;
