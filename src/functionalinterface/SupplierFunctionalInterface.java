@@ -1,10 +1,7 @@
 package functionalinterface;
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.function.*;
+import java.util.function.Supplier;
 
 import data.Employee;
 import data.EmployeeDB;
@@ -17,7 +14,7 @@ public class SupplierFunctionalInterface {
 	
 	public static void main(String[] args) {
 	
-		Supplier<Employee> emp = () -> {return new Employee("Ramya", 0, Arrays.asList("working", "cooking"), 0, "allrounder");};
+		Supplier<Employee> emp = () -> {return new Employee("Ramya", 0, Arrays.asList("working", "cooking"), "home",0, "allrounder");};
 		
 		System.out.println(emp.get());
 		

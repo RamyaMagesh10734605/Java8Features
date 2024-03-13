@@ -14,6 +14,8 @@ import static java.util.stream.Collectors.toSet;
 
 import java.util.List;
 
+import javax.swing.ListCellRenderer;
+
 import data.Employee;
 import data.EmployeeDB;
 
@@ -21,26 +23,20 @@ public class FlatMapMethod {
 	
 	public static void main(String[] args) {
 		
-		//List<Employees> to List<String> holding employee names
-		//map() helps to extract the stream in a different datatypes and also to perform different operations to the stream elements
+		//List<List<Employees>> to List<String> holding employee tasks
+		//flatmap() helps to extract the list of list of streams and flatten as one list
 		
 		List<Employee> employees = EmployeeDB.getAllEmployees();
 		
 		System.out.println(employees
-								.stream()
-								.map(Employee::getName) //Changing List<Employees> to List<String>
-								.map(String::toUpperCase) //It performs string operations. not changing the types
-								.collect(toList())); // to use toList(), need to use static import of java.util.stream.Collectors.toList
+								.stream() //stream of employees
+								.map(Employee::getTasks) //Stream<List<String>>
+								//output [[Developing FrontEnd application, Certification, Code Review, Code Deployment], [Managing Team, Client Visit, Code Review, Interviewer], [Testing Application, TestCase Reviewer, Certification, Test Automation], [Operations Automation, Terraform, CI/CD Pipeline, Code Deployment]]
+								.flatMap(List::stream)
+								//output:[Developing FrontEnd application, Certification, Code Review, Code Deployment, Managing Team, Client Visit, Code Review, Interviewer, Testing Application, TestCase Reviewer, Certification, Test Automation, Operations Automation, Terraform, CI/CD Pipeline, Code Deployment]
+								.collect(toList()));
 								
-								
-		//Another example for toSet operation
-								
-		System.out.println(employees
-									.stream()
-									.map(Employee::getName) //Changing List<Employees> to List<String>
-									.map(String::toUpperCase) //It performs string operations. not changing the types
-									.collect(toSet()) // to use toList(), need to use static import of java.util.stream.Collectors.toList
-		);
+		
 	}
 
 }
