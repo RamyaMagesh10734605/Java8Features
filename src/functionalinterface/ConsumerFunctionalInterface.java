@@ -1,6 +1,6 @@
 package functionalinterface;
 import java.util.List;
-import java.util.function.*;
+import java.util.function.Consumer;
 
 import data.Employee;
 import data.EmployeeDB;

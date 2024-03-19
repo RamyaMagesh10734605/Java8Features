@@ -1,11 +1,5 @@
 package functionalinterface;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.function.*;
-
-import data.Employee;
-import data.EmployeeDB;
+import java.util.function.UnaryOperator;
 
  
 public class UnaryOperatorFunctionalInterface {

@@ -1,7 +1,6 @@
 package streams;
 
 import static java.util.stream.Collectors.toList;
-import static java.util.stream.Collectors.toSet;
 
 /*
  * In Java, static import concept is introduced in 1.5 version. With the help of static import, we can access the static members
@@ -13,8 +12,6 @@ import static java.util.stream.Collectors.toSet;
  */
 
 import java.util.List;
-
-import javax.swing.ListCellRenderer;
 
 import data.Employee;
 import data.EmployeeDB;
